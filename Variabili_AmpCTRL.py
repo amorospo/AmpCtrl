@@ -1,4 +1,4 @@
-site = "Sito di test new"
+site = "ciao"
 Amp = "/dev/shm/metern1.txt"
 met_A = "1_2"
 smtp_S = "smtp.gmail.com"
@@ -7,6 +7,6 @@ from_addr = "email@gmail.com"
 pwd = "password"
 to_addrs = "mail@mail.it"
 Sw_Off = 0
-LowA = 4
-HiA = 14
-lapse = 30
+LowA = 4.2
+HiA = 14.4
+lapse = 30.2

@@ -8,13 +8,13 @@ $smtp_P = $_POST['smtp_P'];
 $from_addr = $_POST['from_addr'];
 $pwd = $_POST['pwd'];
 $to_addrs = $_POST['to_addrs'];
-$Sw_Off = $_POST['Sw_Off'];
+$Sw_Off = "0";
 $LowA = $_POST['LowA'];
 $HiA = $_POST['HiA'];
 $lapse = $_POST['lapse'];
 
 // verifico che tutti i campi siano stati compilati
-if (!$site || !$Amp || !$met_A || !$smtp_S || !$smtp_P || !$from_addr || !$pwd || !$to_addrs || !$Sw_Off || !$LowA || !$HiA || !$lapse) {
+if (!$site || !$Amp || !$met_A || !$smtp_S || !$smtp_P || !$from_addr || !$pwd || !$to_addrs || !$LowA || !$HiA || !$lapse) {
   echo 'Tutti i campi del modulo sono obbligatori!'; 
   echo "<br><a href=\"javascript:history.go(-1)\">Torna indietro e compila i campi vuoti</a>";
 }
@@ -50,19 +50,19 @@ elseif (!preg_match('/^[A-Za-z0-9_.,@ \'-]+$/i',$to_addrs)) {
   echo 'il ottavo campo contiene caratteri non ammessi';
   echo "<br><a href=\"javascript:history.go(-1)\">Torna indietro e correggi i dati immessi</a>";
 }
-elseif (!preg_match('/^[0-9 \'-]+$/i',$Sw_Off)) {
-  echo 'il nono campo contiene caratteri non ammessi';
-  echo "<br><a href=\"javascript:history.go(-1)\">Torna indietro e correggi i dati immessi</a>";
-}
-elseif (!preg_match('/^[0-9 \'-]+$/i',$LowA)) {
+//elseif (!preg_match('/^[0-9. \'-]+$/i',$Sw_Off)) {
+//  echo 'il nono campo contiene caratteri non ammessi';
+//  echo "<br><a href=\"javascript:history.go(-1)\">Torna indietro e correggi i dati immessi</a>";
+//}
+elseif (!preg_match('/^[0-9. \'-]+$/i',$LowA)) {
   echo 'il decimo campo contiene caratteri non ammessi';
   echo "<br><a href=\"javascript:history.go(-1)\">Torna indietro e correggi i dati immessi</a>";
 }
-elseif (!preg_match('/^[0-9 \'-]+$/i',$HiA)) {
+elseif (!preg_match('/^[0-9. \'-]+$/i',$HiA)) {
   echo 'il undicesimo campo contiene caratteri non ammessi';
   echo "<br><a href=\"javascript:history.go(-1)\">Torna indietro e correggi i dati immessi</a>";
 }
-elseif (!preg_match('/^[0-9 \'-]+$/i',$lapse)) {
+elseif (!preg_match('/^[0-9. \'-]+$/i',$lapse)) {
   echo 'il dodicesimo campo contiene caratteri non ammessi';
   echo "<br><a href=\"javascript:history.go(-1)\">Torna indietro e correggi i dati immessi</a>";
 }else{

@@ -45,10 +45,10 @@ while file_A.startswith(met_A) is True:
        	chk()
         time.sleep(1)
 
-	#Routine in case of POWER OUTAGE
+	#Routine in case of SWITCH OFF
 	if Amp_num <= Sw_Off:
-        	msg_sbj = 'POWER OUTAGE WARNING!!!'		#Email subject
-               	msg_obj = ('Warning! Power is down. Amperage is now: {0:0.1f} Amp'.format(Amp_num))	#Email text
+        	msg_sbj = 'SWITCH OFF'		#Email subject
+               	msg_obj = ('No current comsumption. Amperage is now: {0:0.1f} Amp'.format(Amp_num))	#Email text
 		send_msg()
 		while True: 
 			if Amp_num <= Sw_Off:
@@ -58,7 +58,7 @@ while file_A.startswith(met_A) is True:
 			else:
 				#routine Power Outage end
 				if Amp_num < HiA and Amp_num > LowA:	
-		        		msg_sbj = 'POWER OUTAGE ENDS'		#Email subject
+		        		msg_sbj = 'SWITCH OFF ALARM ENDS'		#Email subject
                 			msg_obj = ('Alarm ends. Power is up! Amperage is now: {0:0.1f} Amp'.format(Amp_num))	#Email text
 					send_msg()
 					break
